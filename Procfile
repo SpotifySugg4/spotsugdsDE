@@ -1,1 +1,1 @@
-web: gunicorn --chdir sugg flaskapp:APP -t 300
+web: gunicorn --chdir sugg __init__:APP -t 300
