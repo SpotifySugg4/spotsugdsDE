@@ -4,15 +4,17 @@ from sklearn import preprocessing
 from sklearn.neighbors import KDTree
 import joblib
 import pickle
-# spotify imports
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from os import getenv
+from dotenv import load_dotenv
+load_dotenv()
 
 # spotify credentials
-SPOTIPY_CLIENT_ID = '70a4ac0c19a0485290b200065069b58e'
-SPOTIPY_CLIENT_SECRET = 'a9344253f7fa4902bf568a7e5d44f519'
+SPOTIPY_CLIENT_ID = getenv('SPOTIPY_CLIENT_ID')
+SPOTIPY_CLIENT_SECRET = getenv('SPOTIPY_CLIENT_SECRET')
 # spotify login
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id = SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET))
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=getenv('SPOTIPY_CLIENT_ID'), client_secret=getenv('SPOTIPY_CLIENT_SECRET')))
 
 # read files
 songID = pd.read_csv('../spotsugdsDE/songID.csv', index_col=0)
