@@ -1,3 +1,3 @@
-from .flaskapp import create_app
+from flaskapp import create_app
 
 APP = create_app()

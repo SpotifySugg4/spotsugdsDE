@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
-from .models import askTheModel
+from models import askTheModel
 
 
 def create_app():
@@ -10,8 +10,8 @@ def create_app():
     CORS(app)
 
     @app.route('/')
-    def hello_world():
-        return 'Hello, World!'
+    def main():
+        return 'Welcome to our Spotify Song Suggester!'
     
     @app.route('/suggestions', methods=['POST'])
     # Takes json requests from web.
