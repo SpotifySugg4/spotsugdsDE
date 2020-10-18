@@ -1,1 +1,1 @@
-web: gunicorn app/flaskapp:APP -t 120
+web: gunicorn --chdir app flaskapp:APP -t 120
