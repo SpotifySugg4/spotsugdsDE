@@ -17,10 +17,10 @@ SPOTIPY_CLIENT_SECRET = getenv('SPOTIPY_CLIENT_SECRET')
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=getenv('SPOTIPY_CLIENT_ID'), client_secret=getenv('SPOTIPY_CLIENT_SECRET')))
 
 # read files
-songID = pd.read_csv('./songID.csv', index_col=0)
-songScaler = joblib.load('./scaler.gz')
+songID = pd.read_csv('../songID.csv', index_col=0)
+songScaler = joblib.load('../scaler.gz')
 # load pickled model
-spotifyModel = pickle.load(open('./spotifyModel.pkl', 'rb'))
+spotifyModel = pickle.load(open('../spotifyModel.pkl', 'rb'))
 #print(songID)
 
 def askTheModel(tempSongID='1Cj2vqUwlJVG27gJrun92y'):
