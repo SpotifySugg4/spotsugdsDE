@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
-from models import askTheModel
+from app.models import askTheModel
 
 
 def create_app():
