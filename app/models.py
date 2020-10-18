@@ -21,6 +21,7 @@ songID = pd.read_csv('../spotsugdsDE/songID.csv', index_col=0)
 songScaler = joblib.load('../spotsugdsDE/scaler.gz')
 # load pickled model
 spotifyModel = pickle.load(open('../spotsugdsDE/spotifyModel.pkl', 'rb'))
+#print(songID)
 
 def askTheModel(tempSongID='1Cj2vqUwlJVG27gJrun92y'):
   # some variables I need set up
@@ -28,6 +29,7 @@ def askTheModel(tempSongID='1Cj2vqUwlJVG27gJrun92y'):
               'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo',
               'time_signature']
   temp = pd.DataFrame
+  print(temp)
   similarSongList = []
   # download the song data from spotify and scale it
   x = temp.from_dict(spotify.audio_features(tempSongID))[features]
