@@ -14,7 +14,7 @@ load_dotenv()
 SPOTIPY_CLIENT_ID = getenv('SPOTIPY_CLIENT_ID')
 SPOTIPY_CLIENT_SECRET = getenv('SPOTIPY_CLIENT_SECRET')
 # spotify login
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=getenv('SPOTIPY_CLIENT_ID'), client_secret=getenv('SPOTIPY_CLIENT_SECRET')))
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET))
 
 # read files
 songID = pd.read_csv('./songID.csv', index_col=0)
