@@ -1,3 +1,3 @@
-from sugg.flaskapp import create_app
+from sugg.app import create_app
 
 APP = create_app()
