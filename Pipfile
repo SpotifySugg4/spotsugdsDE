@@ -7,6 +7,15 @@ verify_ssl = true
 
 [packages]
 spotipy = "*"
+<<<<<<< HEAD
+=======
+gunicorn = "*"
+flask-cors = "*"
+pandas = "*"
+sklearn = "*"
+getenv = "*"
+python-dotenv = "*"
+>>>>>>> b47c98c61e686f3016b8617e4abb4ed011e8f421
 
 [requires]
 python_version = "3.7"
