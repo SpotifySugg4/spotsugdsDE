@@ -23,8 +23,8 @@ def create_app():
     @app.route('/search', methods=['POST'])
     # Takes json requests from web.
     def search():
-        name = 'undone'
-        results = spotify.search(q='track:' + name, type='track')
-        return results
+        name = request.json['name']
+        results2 = spotify.search(q='track:' + name, type='track')
+        return jsonify(results2)
         
     return app
