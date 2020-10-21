@@ -18,13 +18,14 @@ def create_app():
     def suggestions():
         song_id = request.json['song_id']
         results = askTheModel(song_id)
+        results = (spotify.tracks(results)) #Remove this line to only return song_IDs
         return jsonify(results)
 
     @app.route('/search', methods=['POST'])
     # Takes json requests from web.
     def search():
         name = request.json['name']
-        results2 = spotify.search(q='track:' + name, type='track')
+        results2 = spotify.search(q='track:' + name, type='track', limit=20)
         return jsonify(results2)
         
     return app

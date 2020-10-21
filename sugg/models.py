@@ -36,9 +36,9 @@ def askTheModel(tempSongID='1Cj2vqUwlJVG27gJrun92y'):
   x_scaled = songScaler.transform(x)
   inputSongScaled = pd.DataFrame(x_scaled)
   # ask the model
-  suggestedSongs = spotifyModel.query(np.array(inputSongScaled).reshape(1, -1), k=11)
+  suggestedSongs = spotifyModel.query(np.array(inputSongScaled).reshape(1, -1), k=21)
   #  convert the answers to song IDs
   for song in suggestedSongs[1][0]:
     if (songID['id'][song]) != tempSongID:
       similarSongList = similarSongList + [(songID['id'][song])]
-  return(similarSongList[:10])
+  return(similarSongList[:20])#changed k=11 to k=21 and [:10] to [:20]
