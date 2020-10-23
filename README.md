@@ -64,7 +64,7 @@ Spotify Dataset 1921-2020, 160k+ Tracks (sent through Spotify API for list of so
 ## Pickle Model for predictions
 ```sh
 from sklearn import preprocessing
-from sklearn.neighbors import KDTree
+from sklearn.neighbors import Nearest Neighbors
 import joblib
 import pickle
 from os import getenv
