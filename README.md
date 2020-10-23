@@ -17,7 +17,7 @@ Activate pip environment: activate pipenv
 Instructions to setup flask app:
 
 ```sh
-<b>Creation of the app.py, __init__.py for the routes and initiations.<b>
+Creation of the app.py, __init__.py for the routes and initiations.
 sugg/app.py
 App.py file:
 This file holds all the routes that will be used in the app. It holds the main, song suggestions, and song search routes.
