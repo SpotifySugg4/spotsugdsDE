@@ -82,16 +82,20 @@ Class for the model:
 def askTheModel(tempSongID='1Cj2vqUwlJVG27gJrun92y'):
   # some variables I need set up
   features = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness',
-              'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo',
-              'time_signature']
+            'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo',
+            'time_signature']
               
  Download songs data from Spotify and scale it:
- x = temp.from_dict(spotify.audio_features(tempSongID))[features]
-  x_scaled = songScaler.transform(x)
-  inputSongScaled = pd.DataFrame(x_scaled)
+temp = pd.DataFrame
+  tempSongID = '6meIeOX3DHdaCnaNw67abE'
+  similarSongList = []
+  x = temp.from_dict(spotify.audio_features(tempSongID))[features]
+  inputSongScaled = songScaler.transform(x)
   
 Ask the model:
- suggestedSongs = spotifyModel.query(np.array(inputSongScaled).reshape(1, -1), k=20)
+#suggestedSongs = spotifyModel.kneighbors(np.array(inputSongScaled).reshape(1, -1), n_neighbors=21)
+  suggestedSongs = spotifyModel.kneighbors(np.array(inputSongScaled).reshape(1, -1), n_neighbors=21, return_distance=False) #added , return_distance=False
+  #  return song IDs
  
 Convert the answers to song ids:
 for song in suggestedSongs[1][0]:
@@ -105,7 +109,6 @@ for song in suggestedSongs[1][0]:
   Link to live app in Heroku:
   https://spotifindya.herokuapp.com/ 
 ```
-
 
 
 
