@@ -40,7 +40,7 @@ Run Flask App: flask run
 ```
 ## Usage for Spotify API
 ```sh
-**sugg/models.py
+sugg/models.py
 Import packages spotipy and SpotifyClientCredentials:
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
