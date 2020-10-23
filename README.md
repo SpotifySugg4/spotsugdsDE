@@ -35,7 +35,7 @@ APP = create_app()
 
 ## Usage
 ```sh
-Deploy Flask App Itself: FLASK_APP_twittoff.py
+Deploy Flask App Itself: FLASK_APP_sugg.py
 Run Flask App: flask run
 ```
 ## Usage for Spotify API
